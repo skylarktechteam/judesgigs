@@ -5,4 +5,6 @@ has_many :gigs
 
 has_one :user
 
+
+
 end

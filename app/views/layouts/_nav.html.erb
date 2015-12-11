@@ -1,22 +1,27 @@
 <div class="top-bar">
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">Judes Jobs</li>
-      <li> Link In  | </li>
-      <li> Link Out | </li>
+      <li class="menu-text">Judes J1 Jobs</li>
+      <li><%= link_to "Gigs", gigs_path  %></li>
+     <li> <%  if !current_user  %></li> <!--  ...this  line is breaking my code -->
 
-	<li> Sign in |  </li>
-	<li> Sign out |  </li>
+  <li><%= link_to "Sign In", signin_path %></li>
+  <li><%= link_to "Sign Up", signup_path %></li>
 
-    
+      <% else %>
 
-  
+     <li> <%= link_to "My Profile", edit_user_path(current_user) %> </li>
+    <li>  <%= link_to "Sign Out", signout_path %> </li>
+    <% end %> 
+
     </ul>
   </div>
+
   <div class="top-bar-right">
     <ul class="menu">
       <li><input type="search" placeholder="Search"></li>
       <li><button type="button" class="button">Search</button></li>
     </ul>
+
   </div>
 </div>
